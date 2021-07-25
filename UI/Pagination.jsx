@@ -11,7 +11,23 @@ function Pagination({ friendsPerPage, totalPosts, paginate }) {
     <>
       <div>
         {pageNumbers.map((number) => (
-          <button key={number} onClick={() => paginate(number)}>
+          <button
+            style={{
+              all: "unset",
+              fontSize: "1.2rem",
+              backgroundColor: "white",
+              margin: "0px 5px",
+              height: "30px",
+              width: "30px",
+              borderRadius: "4px",
+              textAlign: "center",
+              boxShadow: " rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+              // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+              cursor: "pointer",
+            }}
+            key={number}
+            onClick={() => paginate(number)}
+          >
             {number}
           </button>
         ))}

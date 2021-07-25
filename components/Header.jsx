@@ -8,8 +8,8 @@ function Header() {
         <Image
           src='/haptik-logo.png'
           alt='haptik-logo'
-          width='150px'
-          height='79px'
+          width='130px'
+          height='59px'
         />
       </div>
     </>

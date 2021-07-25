@@ -6,13 +6,15 @@ import { allData } from "../Data/index";
 
 function Layout() {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [friendsPerPage, setFriendsPerPage] = useState(4);
   const [friends, setFriends] = useState(() => allData());
-  const [name, setName] = useState();
+  const [name, setName] = useState("");
   const [search, setSearch] = useState("");
 
   const handleSubmit = (e) => {
+    if (name === "") return setError("Please enter a name");
     setLoading(true);
     e.preventDefault();
 
@@ -22,6 +24,7 @@ function Layout() {
     ];
     setFriends(newFriend);
     setLoading(false);
+    setError(null);
   };
 
   const indexOfLastItemRender = currentPage * friendsPerPage;
@@ -50,8 +53,9 @@ function Layout() {
         <header>
           <Header />
         </header>
+        {error && <p style={{ color: "red" }}>{error}</p>}
         <form onSubmit={handleSubmit}>
-          <h3>Friends List</h3>
+          <h2>Friends List</h2>
           <br />
           <input
             onChange={(event) => handleSearch(event)}
@@ -59,12 +63,25 @@ function Layout() {
             type='text'
           />
           <br />
+
           <input
+            style={{
+              minWidth: "400px",
+              maxWidth: "400px",
+              minHeight: "30px",
+              maxHeight: "30px",
+              fontSize: "1.2em",
+              color: "#7e8285",
+              borderRadius: "5px",
+              border: "0.5px solid #adb5bd",
+              margin: "10px 0px",
+              padding: "0px 20px",
+            }}
             type='text'
             onChange={(e) => setName(e.target.value)}
-            placeholder="Enter your friend's name"
+            placeholder='Add a friend'
           />
-          <input type='submit' />
+          <input style={{ visibility: "hidden" }} type='submit' />
         </form>
         <FriendList
           loading={loading}
