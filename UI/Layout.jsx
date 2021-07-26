@@ -50,9 +50,9 @@ function Layout() {
   return (
     <>
       <div>
-        <header>
+        <div>
           <Header />
-        </header>
+        </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
         <form onSubmit={handleSubmit}>
           <h2>Friends List</h2>
