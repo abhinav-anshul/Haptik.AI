@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Button from "../Atom/Button";
+import styles from "../styles/Card.module.css";
 
 function FriendList({
   loading,
@@ -56,16 +58,7 @@ function FriendList({
       <main style={{ minHeight: "600px" }}>
         {currentFriends.map((items) => (
           <div key={items.id}>
-            <div
-              style={{
-                width: "400px",
-                minWidth: "400px",
-                maxWidth: "400px",
-                padding: "15px 15px",
-                borderRadius: "6px",
-                boxShadow: " rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-              }}
-            >
+            <div className={styles.container__card}>
               <div
                 style={{
                   padding: "10px 10px",
@@ -76,33 +69,14 @@ function FriendList({
               </div>
               <span>
                 <button
-                  style={{
-                    all: "unset",
-                    backgroundColor: "#054a91",
-                    fontSize: "1rem",
-                    color: "white",
-                    padding: "10px 30px",
-                    borderRadius: "5px",
-                    cursor: "pointer",
-                    marginRight: "10px",
-                    boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-                  }}
+                  className={styles.primary}
                   onClick={() => handleDelete(items.id)}
                 >
                   Remove
                 </button>
+
                 <button
-                  style={{
-                    all: "unset",
-                    backgroundColor: "#fafafe",
-                    fontSize: "1rem",
-                    color: "black",
-                    padding: "8px 30px",
-                    borderRadius: "5px",
-                    cursor: "pointer",
-                    border: "1px solid black",
-                    boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-                  }}
+                  className={styles.secondary}
                   onClick={() => handleStar(items.id, items.isStar)}
                 >
                   {items.isStar ? "Unstar" : "Star"}

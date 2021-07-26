@@ -1,0 +1,12 @@
+.pagination_button {
+  all: unset;
+  font-size: 1.2rem;
+  background-color: white;
+  margin: 0px 5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}

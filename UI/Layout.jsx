@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import Pagination from "./Pagination";
 import FriendList from "./FriendList";
 import { allData } from "../Data/index";
-
+import Image from "next/image";
+import HaptikLogo from "../public/haptik-logo.png";
 function Layout() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -50,7 +51,14 @@ function Layout() {
   return (
     <>
       <div>
-        <div>{/* <Header /> */}</div>
+        <div>
+          <Image
+            src={HaptikLogo}
+            alt='haptik logo'
+            width='130px'
+            height='59px'
+          />
+        </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
         <form onSubmit={handleSubmit}>
           <h2>Friends List</h2>
