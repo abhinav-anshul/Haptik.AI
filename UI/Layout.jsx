@@ -25,6 +25,7 @@ function Layout() {
     setFriends(newFriend);
     setLoading(false);
     setError(null);
+    setName("");
   };
 
   const indexOfLastItemRender = currentPage * friendsPerPage;
@@ -62,11 +63,11 @@ function Layout() {
         <form onSubmit={handleSubmit}>
           <h2>Friends List</h2>
           <br />
-          <input
+          {/* <input
             onChange={(event) => handleSearch(event)}
             placeholder='search your friends'
             type='text'
-          />
+          /> */}
           <br />
 
           <input
@@ -84,6 +85,7 @@ function Layout() {
             }}
             type='text'
             onChange={(e) => setName(e.target.value)}
+            value={name}
             placeholder='Add a friend'
           />
           <input style={{ visibility: "hidden" }} type='submit' />
