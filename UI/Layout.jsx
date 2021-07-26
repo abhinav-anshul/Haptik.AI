@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Header from "../components/Header";
+import Header from "../Components/Header";
 import Pagination from "./Pagination";
 import FriendList from "./FriendList";
 import { allData } from "../Data/index";
