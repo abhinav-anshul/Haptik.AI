@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Header from "../Components/Header";
+// import Header from "../Components/Header";
 import Pagination from "./Pagination";
 import FriendList from "./FriendList";
 import { allData } from "../Data/index";
@@ -50,9 +50,7 @@ function Layout() {
   return (
     <>
       <div>
-        <div>
-          <Header />
-        </div>
+        <div>{/* <Header /> */}</div>
         {error && <p style={{ color: "red" }}>{error}</p>}
         <form onSubmit={handleSubmit}>
           <h2>Friends List</h2>
