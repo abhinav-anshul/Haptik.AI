@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Header from "../Components/Header";
 import Pagination from "./Pagination";
 import FriendList from "./FriendList";
 import { allData } from "../Data/index";
@@ -52,7 +51,12 @@ function Layout() {
     <>
       <div>
         <div>
-          <Header />
+          <Image
+            src={HaptikLogo}
+            alt='haptik logo'
+            width='130px'
+            height='59px'
+          />
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
         <form onSubmit={handleSubmit}>
